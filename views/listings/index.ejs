@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+<div class="container mt-4">
+
+<h1 class="mb-4">All Listings</h1>
+
+
+
+<div class="row">
+
+<% for(let listing of allListings){ %>
+
+<div class="col-md-4 mb-4">
+
+<a href="/listings/<%= listing._id %>" style="text-decoration:none; color:black;">
+
+<div class="card h-100">
+
+<img src="<%= listing.image.url %>" class="card-img-top" style="height:250px; object-fit:cover;">
+<div class="card-img-overlay"> </div>
+<div class="card-body">
+
+<h5 class="card-title"><%= listing.title %></h5>
+
+<p class="card-text">
+₹ <%= listing.price.toLocaleString("en-IN") %>
+</p>
+
+<!-- <p class="card-text text-muted">
+<%= listing.location %>, <%= listing.country %>
+</p> -->
+
+</div>
+
+</div>
+
+</a>
+
+</div>
+
+<% } %>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+    
+
+<!-- <h1>All Listings</h1> -->
+<!-- <form method="GET" action="/listings/new" >
+    <button >ADD NEW LIST</button>
+
+
+
+
+
+
+
+
+
+<ul>
+    <% for(let listing of allListings) { %>
+        <li>
+            <h3><a href="/listings/<%=listing._id%>"><%= listing.title %></a></h3>
+            </li>
+        
+    <% } %> -->
+</ul>
+
+</body>
